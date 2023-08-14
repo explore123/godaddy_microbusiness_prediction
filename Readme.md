@@ -18,10 +18,10 @@
 ## Map:
 * There are 3135 counties for which we need to predict future MB density. This is how MB density looks for the December 2022:
 
-![USA counties](./usa_plot.png 'USA counties')
+![USA counties](./images/usa_plot.png 'USA counties')
 
-<!-- ![Texas](./texas_plot.png 'Texas') -->
-<!-- ![California](./california_plot.png 'California') -->
+<!-- ![Texas](./images/texas_plot.png 'Texas') -->
+<!-- ![California](./images/california_plot.png 'California') -->
 
 We can see that most of the counties have MB density in range 0-10, some in 10-20, and only few have larger MB density. 
 
@@ -30,15 +30,15 @@ We are provided data for 3 years and 5 months - from 2019.8.1. to 2022.12.31. Th
 
 Lets see how microbusiness density changed for some counties over that time:
 
-![los_angeles_california_over_time](./los_angeles_california_over_time.png)
-![cook_ilionis_over_time](./cook_ilionis_over_time.png)
-![harris_texas_over_time](./harris_texas_over_time.png)
+![los_angeles_california_over_time](./images/los_angeles_california_over_time.png)
+![cook_ilionis_over_time](./images/cook_ilionis_over_time.png)
+![harris_texas_over_time](./images/harris_texas_over_time.png)
 
 ## Cleaning and splitting the data
 
 * Good train test splits are very important for problems like this. I used 5 folds split, predicting 5 months into the future. Hypotheses were generally rejected if they did not improve the score of all the folds.
 
-![train_val_splits](./train_val_splits.png)
+![train_val_splits](./images/train_val_splits.png)
 
 Data had to be investigated and cleaned from strange irregularities, like sudden spikes, and drops. For example:
 
@@ -46,7 +46,7 @@ Data had to be investigated and cleaned from strange irregularities, like sudden
 
 * Another found problem was with sudden spikes and similar sudden changes. Those were detected using a variant of a lowpass filter and then manually checked and "flattened".
 
-![Sudden spike](./19117_over_time.png)
+![Sudden spike](./images/19117_over_time.png)
 
 ## Feature engineering
 
@@ -66,8 +66,8 @@ Data had to be investigated and cleaned from strange irregularities, like sudden
 * Generally, predictions were very dependent on the last values and had a tendency to show raise of MB density.
 * On validation data, this is how predictions look(for the total amount of businesses in thousands):
 
-![predictions_on_train](./predictions_on_train_3.png)
-![predictions_on_train](./predictions_on_train_4.png)
-![predictions_on_train](./predictions_on_train_5.png)
-![predictions_on_train](./predictions_on_train_6.png)
-![predictions_on_train](./predictions_on_train_7.png)
+![predictions_on_train](./images/predictions_on_train_3.png)
+![predictions_on_train](./images/predictions_on_train_4.png)
+![predictions_on_train](./images/predictions_on_train_5.png)
+![predictions_on_train](./images/predictions_on_train_6.png)
+![predictions_on_train](./images/predictions_on_train_7.png)
